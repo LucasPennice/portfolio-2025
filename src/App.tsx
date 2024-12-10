@@ -9,8 +9,18 @@ import {
 	FaClipboard,
 	FaLinkedin,
 	FaSquareGithub,
+	FaReact,
+	FaMoneyCheck,
 	FaSwift,
 } from 'react-icons/fa6';
+import {
+	SiNextdotjs,
+	SiRedux,
+	SiWebpack,
+	SiExpress,
+	SiMongodb,
+	SiMixpanel,
+} from 'react-icons/si';
 import './App.css';
 import { BookshelfModel } from './assets/models/BookshelfModel';
 import cambridge from '/cambridge.png';
@@ -26,13 +36,54 @@ const workExperienceData = [
 		timeInCompany: '(2023 - 2024)',
 		techUsed: [
 			{
-				icon: <FaSwift opacity={0.4} color="#FF3D00" />,
+				icon: <FaSwift opacity={0.6} color="#FF3D00" />,
 				name: 'SwiftUI',
 				color: '#FF3D00',
 			},
+			{
+				icon: <SiMixpanel opacity={0.6} color="#800080" />,
+				name: 'MixPanel',
+				color: '#800080',
+			},
+			{
+				icon: <FaMoneyCheck opacity={0.6} color="#FF1E56" />,
+				name: 'RevenueCat',
+				color: '#FF1E56',
+			},
+			{
+				icon: <FaReact opacity={0.6} color="#03A9F4" />,
+				name: 'React Native',
+				color: '#03A9F4',
+			},
+			{
+				icon: <FaSwift opacity={0.6} color="#1976D2" />,
+				name: 'TypeScript',
+				color: '#1976D2',
+			},
+			{
+				icon: <SiExpress opacity={0.6} color="#008000" />,
+				name: 'ExpressJS',
+				color: '#008000',
+			},
+			{
+				icon: <SiMongodb opacity={0.6} color="#008000" />,
+				name: 'MongoDB',
+				color: '#008000',
+			},
 		],
-		description: [''],
-		imagesSrc: [],
+		description: [
+			'I created Skill Trees to make achieving goals more fun by gamifying the process. Initially, I built the Android app using React Native with Skia, but when I decided to focus on iOS, I switched to SwiftUI for better performance.',
+			"For the visuals, I developed a custom hierarchical tree layout algorithm inspired by Reingold-Tilford's Algorithm and Sugiyama's Framework, plus a radial layout algorithm to create clean, space-efficient graphs.",
+			'The iOS app is built with SwiftUI, SwiftData, and SwiftCharts, while the server runs on ExpressJS to manage user data, RevenueCat webhooks, automated surveys, and SendGrid integration.',
+			'The Android version hit a peak of 1,710 users. The iOS version ran much faster on the same tasks compared to the Android one. Both apps launched on their app stores but aren’t available to download anymore.',
+		],
+		images: [
+			{ src: '/projectsScreenshots/skilltrees/4.png', type: 'desktop' },
+			{ src: '/projectsScreenshots/skilltrees/5.png', type: 'desktop' },
+			{ src: '/projectsScreenshots/skilltrees/1.png', type: 'mobile' },
+			{ src: '/projectsScreenshots/skilltrees/2.png', type: 'mobile' },
+			{ src: '/projectsScreenshots/skilltrees/3.png', type: 'mobile' },
+		],
 	},
 	{
 		name: 'MyBrainPro',
@@ -40,27 +91,49 @@ const workExperienceData = [
 		timeInCompany: '(2024)',
 		techUsed: [
 			{
-				icon: <FaSwift opacity={0.4} color="#FF3D00" />,
+				icon: <FaSwift opacity={0.6} color="#FF3D00" />,
 				name: 'SwiftUI',
 				color: '#FF3D00',
 			},
-		],
-		description: [''],
-		imagesSrc: [],
-	},
-	{
-		name: 'Seneca',
-		role: 'Solo Founder & Software Engineer',
-		timeInCompany: '(2023)',
-		techUsed: [
 			{
-				icon: <FaSwift opacity={0.4} color="#FF3D00" />,
-				name: 'SwiftUI',
-				color: '#FF3D00',
+				icon: <SiMixpanel opacity={0.6} color="#800080" />,
+				name: 'MixPanel',
+				color: '#800080',
+			},
+			{
+				icon: <FaMoneyCheck opacity={0.6} color="#FF1E56" />,
+				name: 'RevenueCat',
+				color: '#FF1E56',
+			},
+			{
+				icon: <FaSwift opacity={0.6} color="#1976D2" />,
+				name: 'TypeScript',
+				color: '#1976D2',
+			},
+			{
+				icon: <SiExpress opacity={0.6} color="#008000" />,
+				name: 'ExpressJS',
+				color: '#008000',
+			},
+			{
+				icon: <SiMongodb opacity={0.6} color="#008000" />,
+				name: 'MongoDB',
+				color: '#008000',
 			},
 		],
-		description: [''],
-		imagesSrc: [],
+		description: [
+			'I created MyBrainPro to help people with ADHD stay focused on long-term projects. I launched it on TestFlight with a group of over 80 testers.',
+			'The app is built using SwiftUI, SwiftData, and SwiftCharts, while the server runs on ExpressJS to handle user data, RevenueCat webhooks, and SendGrid integration.',
+			"Before launch, I made sure everything worked smoothly by running end-to-end tests using Xcode's test suite.",
+		],
+		images: [
+			{ src: '/projectsScreenshots/mybrainpro/1.png', type: 'mobile' },
+			{ src: '/projectsScreenshots/mybrainpro/2.png', type: 'mobile' },
+			{ src: '/projectsScreenshots/mybrainpro/3.png', type: 'mobile' },
+			{ src: '/projectsScreenshots/mybrainpro/4.png', type: 'mobile' },
+			{ src: '/projectsScreenshots/mybrainpro/5.png', type: 'mobile' },
+			{ src: '/projectsScreenshots/mybrainpro/6.png', type: 'mobile' },
+		],
 	},
 	{
 		name: 'TrackerWallet',
@@ -68,13 +141,47 @@ const workExperienceData = [
 		timeInCompany: '(2022)',
 		techUsed: [
 			{
-				icon: <FaSwift opacity={0.4} color="#FF3D00" />,
-				name: 'SwiftUI',
-				color: '#FF3D00',
+				icon: <SiNextdotjs opacity={0.6} color="#333333" />,
+				name: 'NextJs',
+				color: '#333333',
+			},
+			{
+				icon: <FaSwift opacity={0.6} color="#1976D2" />,
+				name: 'TypeScript',
+				color: '#1976D2',
 			},
 		],
-		description: [''],
-		imagesSrc: [],
+		description: [
+			"As the lead developer on this project, I was responsible for selecting the technologies and designing the components and interfaces for the current app and future backend API. I created a mock API to simulate the intended behavior and used local and session storage to ensure data persistence between reloads. I also followed Apple's user experience guidelines to create a smooth and fluid experience for users.",
+			'Using TypeScript as the main language, I wrote clean and well-organized code and implemented recursive algorithms to iterate through tree data structures. I modified VisJs to visualize these trees in two different ways, and wrote custom SVG code to render the tree nodes. I also developed the app based on provided Sigma designs and created functions to filter sub-trees and render an account balance across different time periods. Overall, my contributions helped to create a functional and user-friendly app for our users.',
+		],
+		images: [
+			{
+				src: '/projectsScreenshots/trackerWallet/dashboard1.png',
+				type: 'desktop',
+			},
+			{
+				src: '/projectsScreenshots/trackerWallet/dashboard2.png',
+				type: 'desktop',
+			},
+			{ src: '/projectsScreenshots/trackerWallet/map.png', type: 'desktop' },
+			{
+				src: '/projectsScreenshots/trackerWallet/mappeditnode.png',
+				type: 'desktop',
+			},
+			{
+				src: '/projectsScreenshots/trackerWallet/mapfiltercolor.png',
+				type: 'desktop',
+			},
+			{
+				src: '/projectsScreenshots/trackerWallet/maptree.png',
+				type: 'desktop',
+			},
+			{
+				src: '/projectsScreenshots/trackerWallet/profile.png',
+				type: 'desktop',
+			},
+		],
 	},
 	{
 		name: 'CreatorSet',
@@ -82,13 +189,64 @@ const workExperienceData = [
 		timeInCompany: '(2021 - 2022)',
 		techUsed: [
 			{
-				icon: <FaSwift opacity={0.4} color="#FF3D00" />,
-				name: 'SwiftUI',
-				color: '#FF3D00',
+				icon: <FaSwift opacity={0.6} color="#1976D2" />,
+				name: 'TypeScript',
+				color: '#1976D2',
+			},
+			{
+				icon: <FaReact opacity={0.6} color="#03A9F4" />,
+				name: 'React',
+				color: '#03A9F4',
+			},
+			{
+				icon: <SiRedux opacity={0.6} color="#800080" />,
+				name: 'Redux',
+				color: '#800080',
+			},
+			{
+				icon: <SiWebpack opacity={0.6} color="#FBA200" />,
+				name: 'Webpack',
+				color: '#FBA200',
+			},
+			{
+				icon: <SiMongodb opacity={0.6} color="#008000" />,
+				name: 'MongoDB',
+				color: '#008000',
 			},
 		],
-		description: [''],
-		imagesSrc: [],
+		description: [
+			'As a developer on this project, I was responsible for several key initiatives, including the migration from MUI to custom components for a complete UI overhaul, the partial migration from JavaScript to TypeScript, and the integration with backend APIs to send and receive data that was then rendered as React components. I also created several forms with the option to upload images, videos, and files.',
+			'To enhance the user experience, I implemented polling to check the processing state of uploaded files and created a component that allows users to highlight individual frames of a video. I also built a custom video player and used WavesurferJS to visualize the audio track of an uploaded video. Additionally, I implemented undo and redo functionalities that track the entire modal state.',
+			'Finally, I created a component that allows users to see how their YouTube thumbnail would look on the YouTube homepage (in both light and dark mode) on different devices (such as a computer, tablet, or mobile phone). I also worked with the YouTube API to provide channel name autocompletion on the edit profile page.',
+		],
+		images: [
+			{
+				src: '/projectsScreenshots/creatorSet/captiontool.png',
+				type: 'desktop',
+			},
+			{
+				src: '/projectsScreenshots/creatorSet/captiontoolpage.png',
+				type: 'desktop',
+			},
+			{
+				src: '/projectsScreenshots/creatorSet/editProfile.png',
+				type: 'desktop',
+			},
+			{ src: '/projectsScreenshots/creatorSet/login.png', type: 'desktop' },
+			{
+				src: '/projectsScreenshots/creatorSet/newProduct.png',
+				type: 'desktop',
+			},
+			{
+				src: '/projectsScreenshots/creatorSet/profanitychecker.png',
+				type: 'desktop',
+			},
+			{ src: '/projectsScreenshots/creatorSet/store.png', type: 'desktop' },
+			{
+				src: '/projectsScreenshots/creatorSet/thumbnailPreviewer.png',
+				type: 'desktop',
+			},
+		],
 	},
 ];
 
@@ -148,7 +306,7 @@ function App() {
 								className="flex-1 flex flex-col items-start"
 								layoutId={`title-container-${item.name}`}
 							>
-								<div className="flex items-baseline gap-1">
+								<div className="flex items-baseline gap-2">
 									<h1 className="font-medium text-2xl md:text-3xl">
 										{item.name}
 									</h1>
@@ -166,11 +324,13 @@ function App() {
 										return (
 											<div
 												key={`card${item.name}${badge.name}`}
-												className={`mt-1 h-6 bg-opacity-10 bg-[${badge.color}] items-center flex gap-1 rounded-md px-3 py-1 w-fit`}
+												style={{ backgroundColor: `${badge.color}1A` }}
+												className={`mt-1 h-6 items-center flex gap-1 rounded-md px-3 py-1 w-fit`}
 											>
 												{badge.icon}
 												<span
-													className={`text-[${badge.color}] font-medium text-sm opacity-60`}
+													className={`font-medium text-sm opacity-80`}
+													style={{ color: badge.color }}
 												>
 													{badge.name}
 												</span>
@@ -491,10 +651,10 @@ export function Item({
 			onClick={close}
 		>
 			<motion.div
-				className="pointer-events-auto relative bg-[#f8fafc] overflow-y-scroll open w-full max-w-[900px] z-10 h-full md:h-fit md:rounded-lg px-4 pb-4 md:shadow-md md:shadow-[#0B1A281A] max-h-[900px]"
+				className="pointer-events-auto relative bg-[#f8fafc] overflow-y-scroll open w-full max-w-[900px] z-10 h-full md:h-fit md:rounded-lg px-8 pb-4 md:shadow-md md:shadow-[#0B1A281A] max-h-[700px]"
 				layoutId={`card-container-${item.name}`}
 			>
-				<button className="text-[#649ACB] flex gap-2 items-center w-full max-w-[900px] fixed py-4 z-10 bg-[#f8fafc]/90 backdrop-blur-lg md:rounded-t-lg ml-[-16px] pl-4">
+				<button className="text-[#649ACB] flex gap-2 items-center w-full max-w-[900px] fixed py-4 z-10 bg-[#f8fafc]/90 backdrop-blur-lg md:rounded-t-lg ml-[-32px] pl-4">
 					<FaChevronLeft color="#649ACB" size={14} />
 					<p className="text-md">Home</p>
 				</button>
@@ -502,7 +662,7 @@ export function Item({
 					className="flex-1 flex flex-col items-start mb-4 mt-14 "
 					layoutId={`title-container-${item.name}`}
 				>
-					<div className="flex items-baseline gap-1">
+					<div className="flex items-baseline gap-2">
 						<h1 className="font-medium text-2xl md:text-3xl">{item.name}</h1>
 						<h3 className="text-[#0B1A28] font-medium text-sm md:text-lg opacity-60">
 							{item.timeInCompany}
@@ -513,16 +673,18 @@ export function Item({
 					</h3>
 
 					{/* Badges */}
-					<div className="flex flex-wrap gap-2">
+					<div className="flex flex-wrap gap-2 mb-6">
 						{item.techUsed.map((badge) => {
 							return (
 								<div
 									key={`card${item.name}${badge.name}`}
-									className={`mt-1 h-6 bg-opacity-10 bg-[${badge.color}] items-center flex gap-1 rounded-md px-3 py-1 w-fit`}
+									style={{ backgroundColor: `${badge.color}1A` }}
+									className={`mt-1 h-6 items-center flex gap-1 rounded-md px-3 py-1 w-fit`}
 								>
 									{badge.icon}
 									<span
-										className={`text-[${badge.color}] font-medium text-sm opacity-60`}
+										className={`font-medium text-sm opacity-80`}
+										style={{ color: badge.color }}
 									>
 										{badge.name}
 									</span>
@@ -537,22 +699,28 @@ export function Item({
 						return (
 							<p
 								key={item.name + idx}
-								className="text-base md:text-lg leading-7 mb-4"
+								className="text-base md:text-lg leading-7 mb-6 md:w-[33em]"
 							>
 								{p}
 							</p>
 						);
 					})}
 
-					{item.imagesSrc.map((src, idx) => {
-						return (
-							<img
-								key={item.name + idx + 'src'}
-								src={src}
-								className="rounded-lg mb-4"
-							/>
-						);
-					})}
+					<div className="h-8" />
+
+					<div className="flex flex-wrap justify-center">
+						{item.images.map((img, idx) => {
+							return (
+								<img
+									key={item.name + idx + 'src'}
+									src={img.src}
+									className={`rounded-lg mb-6 ${
+										img.type == 'mobile' && 'max-w-[250px]'
+									} `}
+								/>
+							);
+						})}
+					</div>
 				</motion.div>
 			</motion.div>
 		</motion.div>
