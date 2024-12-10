@@ -13,21 +13,95 @@ import {
 } from 'react-icons/fa6';
 import './App.css';
 import { BookshelfModel } from './assets/models/BookshelfModel';
-import { ReactModel } from './assets/models/ReactModel';
 import cambridge from '/cambridge.png';
 import nyuX from '/nyux.png';
 import selfie from '/placeholder.png';
 import sfOnline from '/sfOnline.png';
 import utn from '/utn.png';
 
+const workExperienceData = [
+	{
+		name: 'Skill Trees',
+		role: 'Solo Founder & Software Engineer',
+		timeInCompany: '(2023 - 2024)',
+		techUsed: [
+			{
+				icon: <FaSwift opacity={0.4} color="#FF3D00" />,
+				name: 'SwiftUI',
+				color: '#FF3D00',
+			},
+		],
+		description: [''],
+		imagesSrc: [],
+	},
+	{
+		name: 'MyBrainPro',
+		role: 'Solo Founder & Software Engineer',
+		timeInCompany: '(2024)',
+		techUsed: [
+			{
+				icon: <FaSwift opacity={0.4} color="#FF3D00" />,
+				name: 'SwiftUI',
+				color: '#FF3D00',
+			},
+		],
+		description: [''],
+		imagesSrc: [],
+	},
+	{
+		name: 'Seneca',
+		role: 'Solo Founder & Software Engineer',
+		timeInCompany: '(2023)',
+		techUsed: [
+			{
+				icon: <FaSwift opacity={0.4} color="#FF3D00" />,
+				name: 'SwiftUI',
+				color: '#FF3D00',
+			},
+		],
+		description: [''],
+		imagesSrc: [],
+	},
+	{
+		name: 'TrackerWallet',
+		role: 'Front End Software Engineer',
+		timeInCompany: '(2022)',
+		techUsed: [
+			{
+				icon: <FaSwift opacity={0.4} color="#FF3D00" />,
+				name: 'SwiftUI',
+				color: '#FF3D00',
+			},
+		],
+		description: [''],
+		imagesSrc: [],
+	},
+	{
+		name: 'CreatorSet',
+		role: 'Front End Software Engineer',
+		timeInCompany: '(2021 - 2022)',
+		techUsed: [
+			{
+				icon: <FaSwift opacity={0.4} color="#FF3D00" />,
+				name: 'SwiftUI',
+				color: '#FF3D00',
+			},
+		],
+		description: [''],
+		imagesSrc: [],
+	},
+];
+
 function App() {
-	const [selected, setSelected] = useState(null);
+	const [selected, setSelected] = useState<
+		(typeof workExperienceData)[0] | null
+	>(null);
 
 	return (
 		<main className="px-4 w-screen flex justify-center text-[#0C1A27]">
-			<body className="w-full max-w-[900px] flex flex-col items-start">
+			<div className="w-full max-w-[900px] flex flex-col items-start">
 				{/* Hero Section */}
-				<div className="w-full min-h-screen flex flex-col items-center py-4">
+				<div className="bg-pattern w-full min-h-screen flex flex-col items-center py-4 ">
 					<div className="flex flex-col md:flex-row flex-1 md:gap-6 md:items-center">
 						<img
 							src={selfie}
@@ -62,35 +136,53 @@ function App() {
 				{/* Experience Section */}
 				<h1 className=" font-normal text-xl mb-7 md:text-3xl">Experience</h1>
 
-				<motion.div
-					layoutId={`card-container-${'skillTrees'}`}
-					className="w-full flex items-center anchor rounded-lg py-4 px-2 bg-[#f8fafc]"
-					onClick={() => setSelected('asd')}
-				>
-					<motion.div
-						className="flex-1 flex flex-col items-start"
-						layoutId={`title-container-${'skillTrees'}`}
-					>
-						<div className="flex items-baseline gap-1">
-							<h1 className="font-medium text-2xl md:text-3xl">Skill Trees</h1>
-							<h3 className="text-[#0B1A28] font-medium text-sm md:text-lg opacity-60">
-								(2023)
-							</h3>
-						</div>
-						<h3 className="text-[#0B1A28] font-medium text-sm md:text-lg opacity-60">
-							Solo Founder & Engineer
-						</h3>
+				{workExperienceData.map((item) => {
+					return (
+						<motion.div
+							key={item.name}
+							layoutId={`card-container-${item.name}`}
+							className="w-full flex items-center anchor rounded-lg py-4 px-2 bg-[#f8fafc] mb-4"
+							onClick={() => setSelected(item)}
+						>
+							<motion.div
+								className="flex-1 flex flex-col items-start"
+								layoutId={`title-container-${item.name}`}
+							>
+								<div className="flex items-baseline gap-1">
+									<h1 className="font-medium text-2xl md:text-3xl">
+										{item.name}
+									</h1>
+									<h3 className="text-[#0B1A28] font-medium text-sm md:text-lg opacity-60">
+										{item.timeInCompany}
+									</h3>
+								</div>
+								<h3 className="text-[#0B1A28] font-medium text-sm md:text-lg opacity-60">
+									{item.role}
+								</h3>
 
-						{/* Badges */}
-						<div className="mt-1 h-6 bg-opacity-10 bg-[#FF3D00] items-center flex gap-1 rounded-md px-3 py-1 w-fit">
-							<FaSwift opacity={0.4} color="#FF3D00" />
-							<span className="text-[#FF3D00] font-medium text-sm opacity-60">
-								Swift
-							</span>
-						</div>
-					</motion.div>
-					<FaChevronRight color="#0C1A27" opacity={0.5} />
-				</motion.div>
+								{/* Badges */}
+								<div className="flex flex-wrap gap-2">
+									{item.techUsed.map((badge) => {
+										return (
+											<div
+												key={`card${item.name}${badge.name}`}
+												className={`mt-1 h-6 bg-opacity-10 bg-[${badge.color}] items-center flex gap-1 rounded-md px-3 py-1 w-fit`}
+											>
+												{badge.icon}
+												<span
+													className={`text-[${badge.color}] font-medium text-sm opacity-60`}
+												>
+													{badge.name}
+												</span>
+											</div>
+										);
+									})}
+								</div>
+							</motion.div>
+							<FaChevronRight color="#0C1A27" opacity={0.5} />
+						</motion.div>
+					);
+				})}
 
 				<div className="py-12" />
 
@@ -171,22 +263,22 @@ function App() {
 				{/* About Me */}
 				<h1 className=" font-normal text-xl mb-7 md:text-3xl">About Me</h1>
 
-				<p className="text-base md:text-lg leading-7 mb-4">
-					Hi, I'm Lucas Pennice, a Software Developer with a strong background
-					in React, React Native, and SwiftUI. I love finding problems and
-					coming up with software solutions to fix them. This passion has led me
-					to create a bunch of mobile apps to tackle issues people talk about in
-					forums. Lately, I've been focusing on solving everyday problems that
-					small businesses face.
+				<p className="text-base md:text-lg leading-7 mb-8 md:w-[30em]">
+					My name is Lucas Pennice, a Software Developer with a strong
+					background in React, React Native, and SwiftUI. I love finding
+					problems and coming up with software solutions to fix them. This
+					passion has led me to create a bunch of mobile apps to tackle issues
+					people talk about in forums. Lately, I've been focusing on solving
+					everyday problems that small businesses face.
 				</p>
 
-				<p className="text-base md:text-lg leading-7 mb-4">
+				<p className="text-base md:text-lg leading-7 mb-8 md:w-[30em]">
 					I started coding back in high school when I took a class on C. After
 					that, I decided to go all in and pursue a degree in Systems
 					Engineering, which I'm set to finish by 2026.
 				</p>
 
-				<p className="text-base md:text-lg leading-7 mb-4">
+				<p className="text-base md:text-lg leading-7 mb-4 md:w-[30em]">
 					When I'm not coding, I'm probably reading about business, philosophy,
 					or fantasy. I also love knifemaking, mechanical keyboards, cars, and
 					hitting the gym. These hobbies keep me curious, creative, and, most
@@ -216,70 +308,64 @@ function App() {
 				</div>
 
 				<div className="mb-4">
-					<h1 className="font-light text-lg md:text-2xl">Clean Code</h1>
+					<h1 className="font-light text-lg">Clean Code</h1>
 
-					<h3 className="text-[#0B1A28] font-normal text-sm md:text-lg opacity-60">
+					<h3 className="text-[#0B1A28] font-normal text-sm opacity-60">
 						Robert C. Martin
 					</h3>
 				</div>
 
 				<div className="mb-4">
-					<h1 className="font-light text-lg md:text-2xl">The Clean Coder</h1>
+					<h1 className="font-light text-lg">The Clean Coder</h1>
 
-					<h3 className="text-[#0B1A28] font-normal text-sm md:text-lg opacity-60">
+					<h3 className="text-[#0B1A28] font-normal text-sm opacity-60">
 						Robert C. Martin
 					</h3>
 				</div>
 
 				<div className="mb-4">
-					<h1 className="font-light text-lg md:text-2xl">
-						Test-Driven Development
-					</h1>
+					<h1 className="font-light text-lg">Test-Driven Development</h1>
 
-					<h3 className="text-[#0B1A28] font-normal text-sm md:text-lg opacity-60">
+					<h3 className="text-[#0B1A28] font-normal text-sm opacity-60">
 						Kent Beck
 					</h3>
 				</div>
 
 				<div className="mb-4">
-					<h1 className="font-light text-lg md:text-2xl">
+					<h1 className="font-light text-lg">
 						The Philosophy of Software Design
 					</h1>
 
-					<h3 className="text-[#0B1A28] font-normal text-sm md:text-lg opacity-60">
+					<h3 className="text-[#0B1A28] font-normal text-sm opacity-60">
 						John Ousterhout
 					</h3>
 				</div>
 
 				<div className="mb-4">
-					<h1 className="font-light text-lg md:text-2xl">
-						The Pragmatic Programmer
-					</h1>
+					<h1 className="font-light text-lg">The Pragmatic Programmer</h1>
 
-					<h3 className="text-[#0B1A28] font-normal text-sm md:text-lg opacity-60">
+					<h3 className="text-[#0B1A28] font-normal text-sm opacity-60">
 						Andy Hunt & Dave Thomas
 					</h3>
 				</div>
 
 				<div className="mb-4">
-					<h1 className="font-light text-lg md:text-2xl">
-						Eloquent JavaScript
-					</h1>
+					<h1 className="font-light text-lg">Eloquent JavaScript</h1>
 
-					<h3 className="text-[#0B1A28] font-normal text-sm md:text-lg opacity-60">
+					<h3 className="text-[#0B1A28] font-normal text-sm opacity-60">
 						Marijn Haverbeke
 					</h3>
 				</div>
 
 				<div className="mb-4">
-					<h1 className="font-light text-lg md:text-2xl">RefactoringUI</h1>
+					<h1 className="font-light text-lg">RefactoringUI</h1>
 
-					<h3 className="text-[#0B1A28] font-normal text-sm md:text-lg opacity-60">
+					<h3 className="text-[#0B1A28] font-normal text-sm opacity-60">
 						Adam Wathan & Steve Schoger
 					</h3>
 				</div>
 
-				<div className="py-6" />
+				{/* <div className="py-6" />
 
 				<h1 className="font-medium text-2xl md:text-3xl mb-2">Courses</h1>
 
@@ -297,90 +383,103 @@ function App() {
 				</div>
 
 				<div>
-					<h1 className="font-light text-lg md:text-2xl mb-4">
+					<h1 className="font-light text-lg mb-4">
 						Advanced CSS and Sass Link
 					</h1>
-					<h1 className="font-light text-lg md:text-2xl mb-4">
+					<h1 className="font-light text-lg mb-4">
 						Typescript: The Complete Developer's Guide
 					</h1>
-					<h1 className="font-light text-lg md:text-2xl mb-4">
+					<h1 className="font-light text-lg mb-4">
 						Object-oriented Programming in JavaScript
 					</h1>
-					<h1 className="font-light text-lg md:text-2xl mb-4">
+					<h1 className="font-light text-lg mb-4">
 						Building Web Applications with React
 					</h1>
-					<h1 className="font-light text-lg md:text-2xl mb-4">
+					<h1 className="font-light text-lg mb-4">
 						Working with REST APIs in JavaScript
 					</h1>
-				</div>
+				</div> */}
 
 				<div className="py-12" />
 
 				{/* Contact */}
-				<h1 className=" font-normal text-xl mb-7 md:text-3xl">
-					Let's get in touch
-				</h1>
-
-				<button
-					className="flex gap-2 items-center bg-[#F3F5F7] rounded-xl w-full px-4 py-2 transition-all active:bg-[#4CAF501A] mb-4"
-					onClick={() => {
-						navigator.clipboard.writeText('lucaspennice@gmail.com');
-					}}
-				>
-					<FaClipboard opacity={0.5} color="#0C1A27" />
-					<span className="font-medium text-2xl ">lucaspennice@gmail.com</span>
-				</button>
-
-				<a
-					href="https://www.linkedin.com/in/lucas-pennice/"
-					target="_blank"
-					className="w-full mt-1 h-12 bg-opacity-10 bg-[#03A9F4] items-center flex rounded-lg px-3 py-1 mb-4"
-				>
-					<FaLinkedin opacity={0.4} color="#03A9F4" size={32} />
-					<span className="text-[#03A9F4] font-medium text-xl opacity-80 ml-2">
-						My LinkedIn
-					</span>
+				<div className="w-full min-h-screen md:min-h-0 md:h-[50vh] flex flex-col py-4">
+					<h1 className=" font-normal text-xl mb-7 md:text-3xl">
+						Let's get in touch
+					</h1>
 
 					<div className="flex-1" />
 
-					<FaChevronRight color="#03A9F4" opacity={0.6} />
-				</a>
-
-				<a
-					href="https://github.com/LucasPennice"
-					target="_blank"
-					className="w-full mt-1 h-12 bg-opacity-10 bg-[#333333] items-center flex rounded-lg px-3 py-1"
-				>
-					<FaSquareGithub opacity={0.4} color="#333333" size={32} />
-					<span className="text-[#333333] font-medium text-xl opacity-80 ml-2">
-						My GitHub
-					</span>
+					<button
+						className="flex gap-2 md:gap-4 items-center justify-start bg-[#F3F5F7] rounded-xl w-full px-4 md:px-8 py-2 md:p-4 transition-all active:bg-[#4CAF501A] mb-4 relative"
+						onClick={() => {
+							navigator.clipboard.writeText('lucaspennice@gmail.com');
+						}}
+					>
+						<FaClipboard opacity={0.5} color="#0C1A27" size={18} />
+						<span className="font-medium md:text-3xl text-xl">
+							lucaspennice@gmail.com
+						</span>
+					</button>
 
 					<div className="flex-1" />
 
-					<FaChevronRight color="#333333" opacity={0.6} />
-				</a>
+					<a
+						href="https://www.linkedin.com/in/lucas-pennice/"
+						target="_blank"
+						className="w-full mt-1 h-12 bg-opacity-10 bg-[#03A9F4] items-center flex rounded-lg px-3 py-1 mb-4"
+					>
+						<FaLinkedin opacity={0.4} color="#03A9F4" size={32} />
+						<span className="text-[#03A9F4] font-medium text-xl opacity-80 ml-2">
+							My LinkedIn
+						</span>
 
-				<div className="py-12" />
+						<div className="flex-1" />
+
+						<FaChevronRight color="#03A9F4" opacity={0.6} />
+					</a>
+
+					<a
+						href="https://github.com/LucasPennice"
+						target="_blank"
+						className="w-full mt-1 h-12 bg-opacity-10 bg-[#333333] items-center flex rounded-lg px-3 py-1"
+					>
+						<FaSquareGithub opacity={0.4} color="#333333" size={32} />
+						<span className="text-[#333333] font-medium text-xl opacity-80 ml-2">
+							My GitHub
+						</span>
+
+						<div className="flex-1" />
+
+						<FaChevronRight color="#333333" opacity={0.6} />
+					</a>
+				</div>
 
 				<AnimatePresence>
 					{selected && (
 						<Item
-							key="item"
+							key={Item.name}
+							item={selected}
 							close={() => {
 								setSelected(null);
 							}}
 						/>
 					)}
 				</AnimatePresence>
-			</body>
+			</div>
 		</main>
 	);
 }
 
 export default App;
 
-export function Item({ close }: { close: () => void }) {
+export function Item({
+	item,
+	close,
+}: {
+	item: (typeof workExperienceData)[0];
+	close: () => void;
+}) {
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
@@ -388,47 +487,72 @@ export function Item({ close }: { close: () => void }) {
 			exit={{ opacity: 0 }}
 			transition={{ duration: 0.2, delay: 0.1 }}
 			style={{ pointerEvents: 'auto' }}
-			className="overlay flex justify-center items-center p-4"
+			className="overlay bg-slate-500 bg-opacity-10 flex justify-center items-center"
 			onClick={close}
 		>
 			<motion.div
-				className="pointer-events-auto relative bg-[#f8fafc] overflow-hidden open w-full max-w-[900px] z-10 h-full md:h-fit md:p-4 md:rounded-lg md:shadow-md md:shadow-[#0B1A281A]"
-				layoutId={`card-container-${'skillTrees'}`}
+				className="pointer-events-auto relative bg-[#f8fafc] overflow-y-scroll open w-full max-w-[900px] z-10 h-full md:h-fit md:rounded-lg px-4 pb-4 md:shadow-md md:shadow-[#0B1A281A] max-h-[900px]"
+				layoutId={`card-container-${item.name}`}
 			>
-				<button className="text-[#649ACB] flex gap-2 items-center mb-4">
+				<button className="text-[#649ACB] flex gap-2 items-center w-full max-w-[900px] fixed py-4 z-10 bg-[#f8fafc]/90 backdrop-blur-lg md:rounded-t-lg ml-[-16px] pl-4">
 					<FaChevronLeft color="#649ACB" size={14} />
 					<p className="text-md">Home</p>
 				</button>
 				<motion.div
-					className="flex-1 flex flex-col items-start mb-4"
-					layoutId={`title-container-${'skillTrees'}`}
+					className="flex-1 flex flex-col items-start mb-4 mt-14 "
+					layoutId={`title-container-${item.name}`}
 				>
 					<div className="flex items-baseline gap-1">
-						<h1 className="font-medium text-2xl md:text-3xl">Skill Trees</h1>
+						<h1 className="font-medium text-2xl md:text-3xl">{item.name}</h1>
 						<h3 className="text-[#0B1A28] font-medium text-sm md:text-lg opacity-60">
-							(2023)
+							{item.timeInCompany}
 						</h3>
 					</div>
 					<h3 className="text-[#0B1A28] font-medium text-sm md:text-lg opacity-60">
-						Solo Founder & Engineer
+						{item.role}
 					</h3>
 
 					{/* Badges */}
-					<div className="mt-1 h-6 bg-opacity-10 bg-[#FF3D00] items-center flex gap-1 rounded-md px-3 py-1 w-fit">
-						<FaSwift opacity={0.4} color="#FF3D00" />
-						<span className="text-[#FF3D00] font-medium text-sm opacity-60">
-							Swift
-						</span>
+					<div className="flex flex-wrap gap-2">
+						{item.techUsed.map((badge) => {
+							return (
+								<div
+									key={`card${item.name}${badge.name}`}
+									className={`mt-1 h-6 bg-opacity-10 bg-[${badge.color}] items-center flex gap-1 rounded-md px-3 py-1 w-fit`}
+								>
+									{badge.icon}
+									<span
+										className={`text-[${badge.color}] font-medium text-sm opacity-60`}
+									>
+										{badge.name}
+									</span>
+								</div>
+							);
+						})}
 					</div>
 				</motion.div>
 
 				<motion.div animate>
-					<p className="text-base md:text-lg leading-7 mb-4">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-						doloremque quia repellat labore, mollitia ducimus distinctio quod
-						aut neque expedita perspiciatis modi accusamus quasi voluptatem
-						fugit! Expedita dolorem enim nemo.
-					</p>
+					{item.description.map((p, idx) => {
+						return (
+							<p
+								key={item.name + idx}
+								className="text-base md:text-lg leading-7 mb-4"
+							>
+								{p}
+							</p>
+						);
+					})}
+
+					{item.imagesSrc.map((src, idx) => {
+						return (
+							<img
+								key={item.name + idx + 'src'}
+								src={src}
+								className="rounded-lg mb-4"
+							/>
+						);
+					})}
 				</motion.div>
 			</motion.div>
 		</motion.div>

@@ -10,11 +10,15 @@
 	color-scheme: light dark;
 	color: '#0C1A27';
 	background-color: #f8fafc;
-
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.bg-pattern {
+	background-image: radial-gradient(#dae0e7 1.1px, #f8fafc 1.1px);
+	background-size: 22px 22px;
 }
 
 a:hover,
