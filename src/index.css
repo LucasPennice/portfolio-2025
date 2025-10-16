@@ -1,78 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+}
+
 :root {
-	font-family: 'Roboto', sans-serif;
-	line-height: 1.5;
-	font-weight: 400;
-	color-scheme: light dark;
-	color: '#0C1A27';
-	background-color: #f8fafc;
-	font-synthesis: none;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: "#000000";
+  background-color: #f8fafc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .bg-pattern {
-	background-image: radial-gradient(#dae0e7 1.1px, #f8fafc 1.1px);
-	background-size: 22px 22px;
+  background-image: radial-gradient(#dae0e7 1.1px, #f8fafc 1.1px);
+  background-size: 22px 22px;
 }
 
 a:hover,
 .anchor:hover {
-	cursor: pointer;
-	background-color: #f3f5f7;
-	transition: 0.2s;
+  cursor: pointer;
+  background-color: #f3f5f7;
+  transition: 0.2s;
 }
 
 body {
-	margin: 0;
-	display: flex;
-	place-items: center;
-	min-width: 320px;
-	min-height: 100vh;
-}
-
-h1 {
-	font-size: 3.2em;
-	line-height: 1.1;
-}
-
-/* --- */
-
-.card-content-container {
-	display: block;
-	pointer-events: none;
-}
-
-.card-content-container.open {
-	z-index: 1;
-	overflow: hidden;
-}
-
-.open .card-content {
-	height: auto;
-	max-width: 700px;
-	overflow: hidden;
-	pointer-events: none;
-}
-
-.overlay {
-	z-index: 1;
-	position: fixed;
-	will-change: opacity;
-	top: 0;
-	bottom: 0;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 100%;
-}
-
-.content-container {
-	padding: 460px 35px 35px 35px;
-	max-width: 700px;
-	width: 90vw;
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
 }
