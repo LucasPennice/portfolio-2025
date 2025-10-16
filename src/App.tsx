@@ -2,7 +2,6 @@ import { AnimatePresence, motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import {
   FaChevronRight,
-  FaLocationArrow,
   FaMoneyCheck,
   FaReact,
   FaSwift,
@@ -27,8 +26,6 @@ const workExperienceData = [
     name: "Skill Trees",
     role: "Solo Founder & Software Engineer",
     timeInCompany: "(2023 - 2024)",
-    repo: "http://localhost:5173/",
-    url: "http://localhost:5173/",
     techUsed: [
       {
         icon: <FaSwift size={70} opacity={0.6} color="#FF3D00" />,
@@ -67,7 +64,7 @@ const workExperienceData = [
       },
     ],
     description: [
-      "I created Skill Trees to make achieving goals more fun by gamifying the process. Initially, I built the Android app using React Native with Skia, but when I decided to focus on iOS, I switched to SwiftUI for better performance. ",
+      "Created Skill Trees, a gamified goal-tracking app initially built with React Native + Skia and later rebuilt in SwiftUI for better iOS performance. Implemented custom hierarchical and radial layouts inspired by Reingold–Tilford and Sugiyama algorithms. Backend in ExpressJS with RevenueCat, SendGrid, and automated surveys. Reached 1,700+ users on Android.",
     ],
     images: [
       { src: "/projectsScreenshots/skilltrees/4.png", type: "desktop" },
@@ -114,7 +111,7 @@ const workExperienceData = [
       },
     ],
     description: [
-      "I created Skill Trees to make achieving goals more fun by gamifying the process. Initially, I built the Android app using React Native with Skia, but when I decided to focus on iOS, I switched to SwiftUI for better performance. ",
+      "I built MyBrainPro to help people with ADHD stay focused on long-term projects. It’s built with SwiftUI, SwiftData, and SwiftCharts, with an Express.js backend handling user data, RevenueCat webhooks, and SendGrid. I launched it on TestFlight with 80 testers and verified everything with end-to-end tests in Xcode.",
     ],
     images: [
       { src: "/projectsScreenshots/mybrainpro/1.png", type: "mobile" },
@@ -142,7 +139,7 @@ const workExperienceData = [
       },
     ],
     description: [
-      "I created Skill Trees to make achieving goals more fun by gamifying the process. Initially, I built the Android app using React Native with Skia, but when I decided to focus on iOS, I switched to SwiftUI for better performance. ",
+      "As lead developer, I chose the tech stack, designed the app and backend API, and built a mock API for testing. Using TypeScript, I wrote clean, modular code, implemented recursive algorithms for tree data, and added custom SVG rendering and filters for sub-trees and balances, creating a smooth, user-friendly experience.",
     ],
     images: [
       {
@@ -204,7 +201,7 @@ const workExperienceData = [
       },
     ],
     description: [
-      "I created Skill Trees to make achieving goals more fun by gamifying the process. Initially, I built the Android app using React Native with Skia, but when I decided to focus on iOS, I switched to SwiftUI for better performance. ",
+      "Led the migration from MUI to custom components and a partial shift from JavaScript to TypeScript in a React app. Replaced Webpack with ESbuild, reducing load times by 22×. Integrated backend APIs, built upload forms for images, videos, and files, and implemented polling, undo/redo, a custom video player, and a YouTube thumbnail preview simulator with YouTube API autocompletion.",
     ],
     images: [
       {
@@ -377,7 +374,7 @@ function HeroSection({
             >
               <p>{projectOpened.role}</p>
 
-              {projectOpened.url && (
+              {/* {projectOpened.url && (
                 <a
                   href={projectOpened.url}
                   target="_blank"
@@ -399,7 +396,7 @@ function HeroSection({
                   GitHub
                   <FaLocationArrow />
                 </a>
-              )}
+              )} */}
             </motion.div>
 
             <motion.p
@@ -492,8 +489,11 @@ function AboutSection({
     <div ref={ref} className="w-full min-h-screen">
       <div className="mx-auto max-w-[800px] flex flex-col gap-8 items-center p-[30px]">
         <p className="col-span-6 col-start-4 font-bold text-[18px] xl:text-[24px]">
-          My name is Lucas Pennice, a Software Developer with a strong
-          background in React, React Native, and SwiftUI.{" "}
+          Hi, I'm Lucas. I love building software that makes people's work
+          easier. I've spent the past few years designing and developing apps.
+          From gamified goal-tracking systems to SaaS tools used by real teams
+          on monday.com. My focus is on simplicity, good design, and solving
+          real problems through clean engineering.
         </p>
 
         {/* UTN */}
@@ -564,7 +564,7 @@ function AboutSection({
         </a>
 
         <p className="w-full font-bold text-[18px] xl:text-[24px]">
-          Proficient at
+          My Engineering Toolkit
         </p>
 
         <div className="w-full flex gap-4 flex-wrap justify-center">
@@ -590,6 +590,29 @@ function AboutSection({
   );
 }
 
+const books = [
+  { src: "/books/cicd.jpg", read: true },
+  { src: "/books/cleanarc.jpg", read: true },
+  { src: "/books/cleancode.jpg", read: true },
+  { src: "/books/cleancoder.webp", read: true },
+  { src: "/books/ddd.jpg", read: false },
+  { src: "/books/ddia.jpg", read: false },
+  { src: "/books/dockerbook.jpeg", read: false },
+  { src: "/books/dwa.jpeg", read: true },
+  { src: "/books/eloquentjs.jpg", read: true },
+  { src: "/books/hfdp.jpeg", read: false },
+  { src: "/books/peaa.jpg", read: false },
+  { src: "/books/pofsoftwared.jpg", read: true },
+  { src: "/books/pragmaticprogrammer.jpg", read: true },
+  { src: "/books/refactoring.jpg", read: false },
+  { src: "/books/refactoringui.png", read: true },
+  { src: "/books/sdi.webp", read: false },
+  { src: "/books/sdi2.webp", read: false },
+  { src: "/books/sweatgoogle.jpg", read: false },
+  { src: "/books/psql.jpeg", read: false },
+  { src: "/books/tdd.jpg", read: true },
+];
+
 function ReadingSection({
   updateSectionInView,
 }: {
@@ -606,24 +629,23 @@ function ReadingSection({
     <div ref={ref} className="w-full min-h-screen mt-[50vh]">
       <div className="mx-auto max-w-[800px] flex flex-col gap-8 items-center p-[30px]">
         <p className="col-span-6 col-start-4 font-bold text-[18px] xl:text-[24px]">
-          One of my biggest goals is to bla bla bla I learn the best through
-          books and these are some of them:
+          One of my biggest goals is to be able to build whatever I imagine.
+          From SaaS tools that small and medium businesses would love, to
+          large-scale consumer apps like Spotify. Here are the books I've read
+          (and plan to read) to help me get there.
         </p>
 
         <div className="w-full flex gap-4 flex-wrap justify-center">
-          {getAllTech().map((badge) => {
+          {books.map((book, idx) => {
             return (
               <div
-                key={badge.name}
-                className="h-[200px] xl:h-[250px] bg-[#D9D9D9A2] rounded-[10px] flex flex-col justify-center items-center gap-2 w-[160px] xl:w-[200px] flex-shrink-0"
+                key={idx}
+                className="h-[200px] p-6 xl:h-[250px] bg-[#D9D9D9A2] rounded-[10px] flex flex-col justify-center items-center gap-2 w-[160px] xl:w-[200px] flex-shrink-0"
               >
-                {badge.icon}
-                <span
-                  className={`font-medium text-[20px]`}
-                  style={{ color: badge.color }}
-                >
-                  {badge.name}
-                </span>
+                <img
+                  src={book.src}
+                  className={`rounded-md ${!book.read && "opacity-30"}`}
+                />
               </div>
             );
           })}
