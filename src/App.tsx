@@ -28,37 +28,37 @@ const workExperienceData = [
     timeInCompany: "(2023 - 2024)",
     techUsed: [
       {
-        icon: <FaSwift size={70} opacity={0.6} color="#FF3D00" />,
+        icon: <FaSwift size={50} opacity={0.6} color="#FF3D00" />,
         name: "SwiftUI",
         color: "#FF3D00",
       },
       {
-        icon: <SiMixpanel size={70} opacity={0.6} color="#800080" />,
+        icon: <SiMixpanel size={50} opacity={0.6} color="#800080" />,
         name: "MixPanel",
         color: "#800080",
       },
       {
-        icon: <FaMoneyCheck size={70} opacity={0.6} color="#FF1E56" />,
+        icon: <FaMoneyCheck size={50} opacity={0.6} color="#FF1E56" />,
         name: "RevenueCat",
         color: "#FF1E56",
       },
       {
-        icon: <FaReact size={70} opacity={0.6} color="#03A9F4" />,
+        icon: <FaReact size={50} opacity={0.6} color="#03A9F4" />,
         name: "React Native",
         color: "#03A9F4",
       },
       {
-        icon: <FaSwift size={70} opacity={0.6} color="#1976D2" />,
+        icon: <FaSwift size={50} opacity={0.6} color="#1976D2" />,
         name: "TypeScript",
         color: "#1976D2",
       },
       {
-        icon: <SiExpress size={70} opacity={0.6} color="#008000" />,
+        icon: <SiExpress size={50} opacity={0.6} color="#008000" />,
         name: "ExpressJS",
         color: "#008000",
       },
       {
-        icon: <SiMongodb size={70} opacity={0.6} color="#008000" />,
+        icon: <SiMongodb size={50} opacity={0.6} color="#008000" />,
         name: "MongoDB",
         color: "#008000",
       },
@@ -80,32 +80,32 @@ const workExperienceData = [
     timeInCompany: "(2024)",
     techUsed: [
       {
-        icon: <FaSwift size={70} opacity={0.6} color="#FF3D00" />,
+        icon: <FaSwift size={50} opacity={0.6} color="#FF3D00" />,
         name: "SwiftUI",
         color: "#FF3D00",
       },
       {
-        icon: <SiMixpanel size={70} opacity={0.6} color="#800080" />,
+        icon: <SiMixpanel size={50} opacity={0.6} color="#800080" />,
         name: "MixPanel",
         color: "#800080",
       },
       {
-        icon: <FaMoneyCheck size={70} opacity={0.6} color="#FF1E56" />,
+        icon: <FaMoneyCheck size={50} opacity={0.6} color="#FF1E56" />,
         name: "RevenueCat",
         color: "#FF1E56",
       },
       {
-        icon: <FaSwift size={70} opacity={0.6} color="#1976D2" />,
+        icon: <FaSwift size={50} opacity={0.6} color="#1976D2" />,
         name: "TypeScript",
         color: "#1976D2",
       },
       {
-        icon: <SiExpress size={70} opacity={0.6} color="#008000" />,
+        icon: <SiExpress size={50} opacity={0.6} color="#008000" />,
         name: "ExpressJS",
         color: "#008000",
       },
       {
-        icon: <SiMongodb size={70} opacity={0.6} color="#008000" />,
+        icon: <SiMongodb size={50} opacity={0.6} color="#008000" />,
         name: "MongoDB",
         color: "#008000",
       },
@@ -128,12 +128,12 @@ const workExperienceData = [
     timeInCompany: "(2022)",
     techUsed: [
       {
-        icon: <SiNextdotjs size={70} opacity={0.6} color="#333333" />,
+        icon: <SiNextdotjs size={50} opacity={0.6} color="#333333" />,
         name: "NextJs",
         color: "#333333",
       },
       {
-        icon: <FaSwift size={70} opacity={0.6} color="#1976D2" />,
+        icon: <FaSwift size={50} opacity={0.6} color="#1976D2" />,
         name: "TypeScript",
         color: "#1976D2",
       },
@@ -175,27 +175,27 @@ const workExperienceData = [
     timeInCompany: "(2021 - 2022)",
     techUsed: [
       {
-        icon: <FaSwift size={70} opacity={0.6} color="#1976D2" />,
+        icon: <FaSwift size={50} opacity={0.6} color="#1976D2" />,
         name: "TypeScript",
         color: "#1976D2",
       },
       {
-        icon: <FaReact size={70} opacity={0.6} color="#03A9F4" />,
+        icon: <FaReact size={50} opacity={0.6} color="#03A9F4" />,
         name: "React",
         color: "#03A9F4",
       },
       {
-        icon: <SiRedux size={70} opacity={0.6} color="#800080" />,
+        icon: <SiRedux size={50} opacity={0.6} color="#800080" />,
         name: "Redux",
         color: "#800080",
       },
       {
-        icon: <SiWebpack size={70} opacity={0.6} color="#FBA200" />,
+        icon: <SiWebpack size={50} opacity={0.6} color="#FBA200" />,
         name: "Webpack",
         color: "#FBA200",
       },
       {
-        icon: <SiMongodb size={70} opacity={0.6} color="#008000" />,
+        icon: <SiMongodb size={50} opacity={0.6} color="#008000" />,
         name: "MongoDB",
         color: "#008000",
       },
@@ -292,47 +292,45 @@ function HeroSection({
   return (
     <div
       ref={ref}
-      className="w-full h-screen relative grid grid-cols-12 grid-rows-[repeat(16,1fr)] p-[30px] gap-x-[30px] gap-y-[8px]"
+      className="w-full h-screen relative grid grid-cols-12 grid-rows-[repeat(16,1fr)] p-[8px] xl:p-[30px] gap-x-[30px] gap-y-[8px]"
     >
-      {!projectIdOpened && (
-        <motion.div
-          initial={{ y: 10, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          className="col-start-1 col-end-12 row-start-4 xl:col-start-6 xl:col-end-10 xl:row-start-7 xl:row-end-10 flex flex-col justify-center"
-        >
-          <p className="font-bold text-[24px]">Lucas Pennice,</p>
-          <p className="font-bold text-[24px]">
-            Software Engineer at{" "}
-            <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              Celeris
-            </span>
-          </p>
+      <motion.div
+        initial={{ y: 10, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        className="col-start-1 col-end-12 row-start-4 xl:col-start-6 xl:col-end-10 xl:row-start-7 xl:row-end-10 flex flex-col justify-center"
+      >
+        <p className="font-bold text-[24px]">Lucas Pennice,</p>
+        <p className="font-bold text-[24px]">
+          Software Engineer at{" "}
+          <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            Celeris
+          </span>
+        </p>
 
-          <div className="text-[#94949E] font-medium text-[18px] flex gap-4">
-            <a
-              href="https://www.linkedin.com/in/lucas-pennice/"
-              target="_blank"
-              className="hover:bg-white hover:shadow-[0_0_24px_2px_rgba(0,0,0,0.25)] px-1 rounded-md"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="mailto:lucaspennice@gmail.com"
-              target="_blank"
-              className="hover:bg-white hover:shadow-[0_0_24px_2px_rgba(0,0,0,0.25)] px-1 rounded-md"
-            >
-              Email
-            </a>
-            <a
-              href="https://github.com/LucasPennice"
-              target="_blank"
-              className="hover:bg-white hover:shadow-[0_0_24px_2px_rgba(0,0,0,0.25)] px-1 rounded-md"
-            >
-              GitHub
-            </a>
-          </div>
-        </motion.div>
-      )}
+        <div className="text-[#94949E] font-medium text-[18px] flex gap-4">
+          <a
+            href="https://www.linkedin.com/in/lucas-pennice/"
+            target="_blank"
+            className="hover:bg-white hover:shadow-[0_0_24px_2px_rgba(0,0,0,0.25)] px-1 rounded-md"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="mailto:lucaspennice@gmail.com"
+            target="_blank"
+            className="hover:bg-white hover:shadow-[0_0_24px_2px_rgba(0,0,0,0.25)] px-1 rounded-md"
+          >
+            Email
+          </a>
+          <a
+            href="https://github.com/LucasPennice"
+            target="_blank"
+            className="hover:bg-white hover:shadow-[0_0_24px_2px_rgba(0,0,0,0.25)] px-1 rounded-md"
+          >
+            GitHub
+          </a>
+        </div>
+      </motion.div>
 
       <AnimatePresence>
         {projectOpened && (
@@ -340,13 +338,13 @@ function HeroSection({
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 10, opacity: 0 }}
-            className="col-span-full h-[calc(100vh-60px)] xl:col-start-5 xl:col-end-12 bg-white xl:h-[780px] shadow-[0_0_24px_2px_rgba(0,0,0,0.25)] grid grid-cols-7 grid-rows-[repeat(13,1fr)] p-[30px] gap-x-[20px] gap-y-[8px] rounded-[20px] self-center overflow-hidden z-10"
+            className="absolute col-span-full h-[calc(100vh-60px)] xl:col-start-5 xl:col-end-12 bg-white shadow-[0_0_24px_2px_rgba(0,0,0,0.25)] grid grid-cols-7 grid-rows-[repeat(13,1fr)] p-[30px] gap-x-[20px] gap-y-[8px] rounded-[20px] self-center overflow-hidden z-10"
             style={{ gridRow: "2 / span 13" }}
           >
             {projectOpened && (
               <button
                 onClick={openProject(projectOpened.name)}
-                className="xl:hidden absolute right-4 top-4 bg-[#AFAFAF] h-[50px] w-[50px] rounded-full flex justify-center items-center"
+                className="xl:hidden absolute right-4 top-4 bg-[#AFAFAF]  h-[50px] w-[50px] rounded-full flex justify-center items-center"
               >
                 <FaXmark color="white" size={32} />
               </button>
@@ -403,7 +401,7 @@ function HeroSection({
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1, transition: { delay: 0.1 } }}
               key={projectOpened.name + "description"}
-              className="col-span-full row-span-2 font-light text-[14px] xl:text-[18px] my-auto"
+              className="col-span-full row-span-2 font-light text-[12px] md:text-[14px] xl:text-[18px] my-auto"
             >
               {projectOpened.description}
             </motion.p>
@@ -418,7 +416,7 @@ function HeroSection({
                 return (
                   <div
                     key={`card${projectOpened.name}${badge.name}`}
-                    className="h-full bg-[#D9D9D9A2] rounded-[10px] flex flex-col justify-center items-center gap-2 w-[200px] flex-shrink-0"
+                    className="h-full bg-[#e8e8e8a2] rounded-[10px] flex flex-col justify-center items-center gap-2 w-[200px] flex-shrink-0"
                   >
                     {badge.icon}
                     <span
@@ -572,7 +570,7 @@ function AboutSection({
             return (
               <div
                 key={badge.name}
-                className="h-[120px] xl:h-[180px] bg-[#D9D9D9A2] rounded-[10px] flex flex-col justify-center items-center gap-2 w-[160px] xl:w-[220px] flex-shrink-0"
+                className="h-[120px] filter grayscale hover:grayscale-0 xl:h-[180px] hover:bg-white hover:shadow-[0_0_24px_2px_rgba(0,0,0,0.25)] transition-all rounded-[10px] flex flex-col justify-center items-center gap-2 w-[160px] xl:w-[220px] flex-shrink-0"
               >
                 {badge.icon}
                 <span
