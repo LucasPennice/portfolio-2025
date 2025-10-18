@@ -338,7 +338,7 @@ function HeroSection({
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 10, opacity: 0 }}
-            className="absolute col-span-full h-[calc(100vh-60px)] xl:col-start-5 xl:col-end-12 bg-white shadow-[0_0_24px_2px_rgba(0,0,0,0.25)] grid grid-cols-7 grid-rows-[repeat(13,1fr)] p-[30px] gap-x-[20px] gap-y-[8px] rounded-[20px] self-center overflow-hidden z-10"
+            className="absolute col-span-full h-[calc(100vh-60px)] max-h-[780px] xl:col-start-5 xl:col-end-12 bg-white shadow-[0_0_24px_2px_rgba(0,0,0,0.25)] grid grid-cols-7 grid-rows-[repeat(13,1fr)] p-[30px] gap-x-[20px] gap-y-[8px] rounded-[20px] self-center overflow-hidden z-10"
             style={{ gridRow: "2 / span 13" }}
           >
             {projectOpened && (
