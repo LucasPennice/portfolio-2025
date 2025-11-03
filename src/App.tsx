@@ -301,9 +301,9 @@ function HeroSection({
       >
         <p className="font-bold text-[24px]">Lucas Pennice,</p>
         <p className="font-bold text-[24px]">
-          Software Engineer at{" "}
+          {/* Software Engineer at{" "} */}
           <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-            Celeris
+            Software Engineer
           </span>
         </p>
 
