@@ -69,11 +69,17 @@ const workExperienceData = [
       "Created Skill Trees, a gamified goal-tracking app initially built with React Native + Skia and later rebuilt in SwiftUI for better iOS performance. Implemented custom hierarchical and radial layouts inspired by Reingold–Tilford and Sugiyama algorithms. Backend in ExpressJS with RevenueCat, SendGrid, and automated surveys. Reached 1,700+ users on Android.",
     ],
     images: [
-      { src: "/projectsScreenshots/skilltrees/4.png", type: "desktop" },
-      { src: "/projectsScreenshots/skilltrees/5.png", type: "desktop" },
-      { src: "/projectsScreenshots/skilltrees/1.png", type: "mobile" },
-      { src: "/projectsScreenshots/skilltrees/2.png", type: "mobile" },
-      { src: "/projectsScreenshots/skilltrees/3.png", type: "mobile" },
+      {
+        src: "/projectsScreenshots/skilltrees/4.png",
+        aspectRatio: "2580/2796",
+      },
+      {
+        src: "/projectsScreenshots/skilltrees/5.png",
+        aspectRatio: "2580/2796",
+      },
+      { src: "/projectsScreenshots/skilltrees/1.png", aspectRatio: "700/1296" },
+      { src: "/projectsScreenshots/skilltrees/2.png", aspectRatio: "700/1296" },
+      { src: "/projectsScreenshots/skilltrees/3.png", aspectRatio: "700/1296" },
     ],
   },
   {
@@ -117,12 +123,12 @@ const workExperienceData = [
       "I built MyBrainPro to help people with ADHD stay focused on long-term projects. It’s built with SwiftUI, SwiftData, and SwiftCharts, with an Express.js backend handling user data, RevenueCat webhooks, and SendGrid. I launched it on TestFlight with 80 testers and verified everything with end-to-end tests in Xcode.",
     ],
     images: [
-      { src: "/projectsScreenshots/mybrainpro/1.png", type: "mobile" },
-      { src: "/projectsScreenshots/mybrainpro/2.png", type: "mobile" },
-      { src: "/projectsScreenshots/mybrainpro/3.png", type: "mobile" },
-      { src: "/projectsScreenshots/mybrainpro/4.png", type: "mobile" },
-      { src: "/projectsScreenshots/mybrainpro/5.png", type: "mobile" },
-      { src: "/projectsScreenshots/mybrainpro/6.png", type: "mobile" },
+      { src: "/projectsScreenshots/mybrainpro/1.png", aspectRatio: "473/932" },
+      { src: "/projectsScreenshots/mybrainpro/2.png", aspectRatio: "473/932" },
+      { src: "/projectsScreenshots/mybrainpro/3.png", aspectRatio: "473/932" },
+      { src: "/projectsScreenshots/mybrainpro/4.png", aspectRatio: "473/932" },
+      { src: "/projectsScreenshots/mybrainpro/5.png", aspectRatio: "473/932" },
+      { src: "/projectsScreenshots/mybrainpro/6.png", aspectRatio: "473/932" },
     ],
   },
   {
@@ -147,28 +153,31 @@ const workExperienceData = [
     images: [
       {
         src: "/projectsScreenshots/trackerWallet/dashboard1.png",
-        type: "desktop",
+        aspectRatio: "2560/1358",
       },
       {
         src: "/projectsScreenshots/trackerWallet/dashboard2.png",
-        type: "desktop",
+        aspectRatio: "2560/1358",
       },
-      { src: "/projectsScreenshots/trackerWallet/map.png", type: "desktop" },
       {
-        src: "/projectsScreenshots/trackerWallet/mappeditnode.png",
-        type: "desktop",
+        src: "/projectsScreenshots/trackerWallet/map.png",
+        aspectRatio: "2560/1358",
+      },
+      {
+        src: "/projectsScreenshots/trackerWallet/mapeditnode.png",
+        aspectRatio: "2560/1358",
       },
       {
         src: "/projectsScreenshots/trackerWallet/mapfiltercolor.png",
-        type: "desktop",
+        aspectRatio: "2560/1358",
       },
       {
         src: "/projectsScreenshots/trackerWallet/maptree.png",
-        type: "desktop",
+        aspectRatio: "2560/1358",
       },
       {
         src: "/projectsScreenshots/trackerWallet/profile.png",
-        type: "desktop",
+        aspectRatio: "2560/1358",
       },
     ],
   },
@@ -209,29 +218,35 @@ const workExperienceData = [
     images: [
       {
         src: "/projectsScreenshots/creatorSet/captiontool.png",
-        type: "desktop",
+        aspectRatio: "2560/1358",
       },
       {
         src: "/projectsScreenshots/creatorSet/captiontoolpage.png",
-        type: "desktop",
+        aspectRatio: "2560/1358",
       },
       {
         src: "/projectsScreenshots/creatorSet/editProfile.png",
-        type: "desktop",
+        aspectRatio: "2560/1358",
       },
-      { src: "/projectsScreenshots/creatorSet/login.png", type: "desktop" },
+      {
+        src: "/projectsScreenshots/creatorSet/login.png",
+        aspectRatio: "2560/1358",
+      },
       {
         src: "/projectsScreenshots/creatorSet/newProduct.png",
-        type: "desktop",
+        aspectRatio: "2560/1358",
       },
       {
         src: "/projectsScreenshots/creatorSet/profanitychecker.png",
-        type: "desktop",
+        aspectRatio: "2560/1358",
       },
-      { src: "/projectsScreenshots/creatorSet/store.png", type: "desktop" },
+      {
+        src: "/projectsScreenshots/creatorSet/store.png",
+        aspectRatio: "2560/1358",
+      },
       {
         src: "/projectsScreenshots/creatorSet/thumbnailPreviewer.png",
-        type: "desktop",
+        aspectRatio: "2560/1358",
       },
     ],
   },
@@ -441,11 +456,10 @@ function HeroSection({
             >
               {projectOpened.images.map((img, idx) => {
                 return (
-                  <img
+                  <ProjectImage
                     key={projectOpened.name + idx + "src"}
                     src={img.src}
-                    loading="lazy"
-                    className="h-full max-w-none rounded-[15px]"
+                    aspectRatio={img.aspectRatio}
                   />
                 );
               })}
@@ -471,6 +485,32 @@ function HeroSection({
           );
         })}
       </div>
+    </div>
+  );
+}
+
+function ProjectImage({
+  src,
+  aspectRatio,
+}: {
+  src: string;
+  aspectRatio: string;
+}) {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <div className="relative" style={{ aspectRatio }}>
+      {!loaded && (
+        <div className="absolute inset-0 bg-[#e5e7eb] animate-pulse rounded-[15px]" />
+      )}
+      <img
+        src={src}
+        loading="lazy"
+        onLoad={() => setLoaded(true)}
+        className={`h-full w-full object-cover transition-opacity duration-300 rounded-[15px] ${
+          loaded ? "opacity-100" : "opacity-0"
+        }`}
+      />
     </div>
   );
 }
