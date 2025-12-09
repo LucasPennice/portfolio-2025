@@ -398,6 +398,7 @@ function HeroSection({
   return (
     <div
       ref={ref}
+      id="work"
       className="w-full h-screen relative grid grid-cols-12 grid-rows-[repeat(16,1fr)] p-[8px] xl:p-[30px] gap-x-[30px] gap-y-[8px]"
     >
       <motion.div
@@ -604,7 +605,7 @@ function AboutSection({
   }, [isInView]);
 
   return (
-    <div ref={ref} className="w-full min-h-screen">
+    <div id="about" ref={ref} className="w-full min-h-screen">
       <div className="mx-auto max-w-[800px] flex flex-col gap-8 items-center p-[30px]">
         <p className="col-span-6 col-start-4 font-bold text-[18px] xl:text-[24px]">
           Hi, I'm Lucas. I love building software that makes people's work
@@ -744,7 +745,7 @@ function ReadingSection({
   }, [isInView]);
 
   return (
-    <div ref={ref} className="w-full min-h-screen mt-[50vh]">
+    <div id="reading" ref={ref} className="w-full min-h-screen mt-[50vh]">
       <div className="mx-auto max-w-[800px] flex flex-col gap-8 items-center p-[30px]">
         <p className="col-span-6 col-start-4 font-bold text-[18px] xl:text-[24px]">
           One of my biggest goals is to be able to build whatever I imagine.
@@ -809,15 +810,24 @@ function ScrollIndicator({
         initial={{ left: OFFSET }}
       />
 
-      <div className="h-full w-[150px] flex justify-center items-center z-10">
+      <a
+        href="#work"
+        className="h-full w-[150px] flex justify-center items-center z-10  hover:bg-transparent"
+      >
         Work
-      </div>
-      <div className="h-full w-[150px] flex justify-center items-center z-10">
+      </a>
+      <a
+        href="#about"
+        className="h-full w-[150px] flex justify-center items-center z-10  hover:bg-transparent"
+      >
         About
-      </div>
-      <div className="h-full w-[150px] flex justify-center items-center z-10">
+      </a>
+      <a
+        href="#reading"
+        className="h-full w-[150px] flex justify-center items-center z-10  hover:bg-transparent"
+      >
         Reading
-      </div>
+      </a>
     </div>
   );
 }
