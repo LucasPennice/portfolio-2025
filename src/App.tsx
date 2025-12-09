@@ -2,6 +2,7 @@ import { AnimatePresence, motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import {
   FaChevronRight,
+  FaLocationArrow,
   FaMoneyCheck,
   FaReact,
   FaSwift,
@@ -26,6 +27,7 @@ const workExperienceData = [
     name: "Skill Trees",
     role: "Solo Founder & Software Engineer",
     timeInCompany: "(2023 - 2024)",
+    url: "https://github.com/LucasPennice/React-Native-Skill-Trees",
     techUsed: [
       {
         icon: <FaSwift size={50} opacity={0.6} color="#FF3D00" />,
@@ -78,6 +80,7 @@ const workExperienceData = [
     name: "MyBrainPro",
     role: "Solo Founder & Software Engineer",
     timeInCompany: "(2024)",
+    url: "https://github.com/LucasPennice/SwiftUI-My-Brain-Pro",
     techUsed: [
       {
         icon: <FaSwift size={50} opacity={0.6} color="#FF3D00" />,
@@ -384,17 +387,17 @@ function HeroSection({
                     .replace("www.", "")}
                   <FaLocationArrow />
                 </a>
-              )}
-              {projectOpened.repo && (
+              )} */}
+              {projectOpened.url && (
                 <a
-                  href={projectOpened.repo}
+                  href={projectOpened.url}
                   target="_blank"
-                  className="hidden xl:flex items-center gap-1 hover:shadow-[0_0_24px_2px_rgba(0,0,0,0.25)] p-1 rounded-md"
+                  className="hidden xl:flex items-center px-4 gap-1 hover:shadow-[0_0_24px_2px_rgba(0,0,0,0.1)] p-1 rounded-md"
                 >
                   GitHub
                   <FaLocationArrow />
                 </a>
-              )} */}
+              )}
             </motion.div>
 
             <motion.p
@@ -441,6 +444,7 @@ function HeroSection({
                   <img
                     key={projectOpened.name + idx + "src"}
                     src={img.src}
+                    loading="lazy"
                     className="h-full max-w-none rounded-[15px]"
                   />
                 );
