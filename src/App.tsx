@@ -14,6 +14,9 @@ import {
   SiMongodb,
   SiNextdotjs,
   SiRedux,
+  SiSentry,
+  SiVite,
+  SiVitest,
   SiWebpack,
 } from "react-icons/si";
 import "./App.css";
@@ -25,9 +28,18 @@ import utn from "/utn.png";
 const workExperienceData = [
   {
     name: "Skill Trees",
-    role: "Solo Founder & Software Engineer",
+    role: "Mobile Software Engineer",
     timeInCompany: "(2023 - 2024)",
-    url: "https://github.com/LucasPennice/React-Native-Skill-Trees",
+    links: [
+      {
+        url: "https://github.com/LucasPennice/React-Native-Skill-Trees",
+        label: "RN Repo",
+      },
+      {
+        url: "https://github.com/LucasPennice/SwiftUI-Skill-Trees",
+        label: "iOS Repo",
+      },
+    ],
     techUsed: [
       {
         icon: <FaSwift size={50} opacity={0.6} color="#FF3D00" />,
@@ -84,9 +96,14 @@ const workExperienceData = [
   },
   {
     name: "MyBrainPro",
-    role: "Solo Founder & Software Engineer",
+    role: "Mobile Software Engineer",
     timeInCompany: "(2024)",
-    url: "https://github.com/LucasPennice/SwiftUI-My-Brain-Pro",
+    links: [
+      {
+        url: "https://github.com/LucasPennice/SwiftUI-My-Brain-Pro",
+        label: "Repo",
+      },
+    ],
     techUsed: [
       {
         icon: <FaSwift size={50} opacity={0.6} color="#FF3D00" />,
@@ -120,7 +137,7 @@ const workExperienceData = [
       },
     ],
     description: [
-      "I built MyBrainPro to help people with ADHD stay focused on long-term projects. It’s built with SwiftUI, SwiftData, and SwiftCharts, with an Express.js backend handling user data, RevenueCat webhooks, and SendGrid. I launched it on TestFlight with 80 testers and verified everything with end-to-end tests in Xcode.",
+      "I built MyBrainPro to help people with ADHD stay focused on long-term projects. It's built with SwiftUI, SwiftData, and SwiftCharts, with an Express.js backend handling user data, RevenueCat webhooks, and SendGrid. I launched it on TestFlight with 80 testers and verified everything with end-to-end tests in Xcode.",
     ],
     images: [
       { src: "/projectsScreenshots/mybrainpro/1.png", aspectRatio: "473/932" },
@@ -129,6 +146,77 @@ const workExperienceData = [
       { src: "/projectsScreenshots/mybrainpro/4.png", aspectRatio: "473/932" },
       { src: "/projectsScreenshots/mybrainpro/5.png", aspectRatio: "473/932" },
       { src: "/projectsScreenshots/mybrainpro/6.png", aspectRatio: "473/932" },
+    ],
+  },
+  {
+    name: "Simple Recurring Tasks",
+    role: "Software Engineer",
+    timeInCompany: "(2025)",
+    links: [
+      {
+        label: "Client Repo",
+        url: "https://github.com/LucasPennice/ViteJS-repeatable-tasks-app-monday.com-client",
+      },
+      {
+        label: "Server Repo",
+        url: "https://github.com/LucasPennice/ExpressJS-repeating-tasks-server",
+      },
+    ],
+    techUsed: [
+      {
+        icon: <SiVite size={50} opacity={0.6} color="#B9C625" />,
+        name: "Vite",
+        color: "#B9C625",
+      },
+
+      {
+        icon: <FaSwift size={50} opacity={0.6} color="#1976D2" />,
+        name: "TypeScript",
+        color: "#1976D2",
+      },
+      {
+        icon: <SiExpress size={50} opacity={0.6} color="#008000" />,
+        name: "ExpressJS",
+        color: "#008000",
+      },
+      {
+        icon: <SiMongodb size={50} opacity={0.6} color="#008000" />,
+        name: "MongoDB",
+        color: "#008000",
+      },
+      {
+        icon: <SiMixpanel size={50} opacity={0.6} color="#800080" />,
+        name: "MixPanel",
+        color: "#800080",
+      },
+      {
+        icon: <SiSentry size={50} opacity={0.6} color="#800080" />,
+        name: "Sentry",
+        color: "#800080",
+      },
+
+      {
+        icon: <SiVitest size={50} opacity={0.6} color="#B9C625" />,
+        name: "Vitest",
+        color: "#B9C625",
+      },
+    ],
+    description: [
+      "A workflow-automation app for the monday.com marketplace used by 15 companies to automate recurring items. Developed a React + Vite frontend mirroring monday's UI, with a TypeScript/Express backend, 5-minute cron engine, and MongoDB storage. Implemented OAuth-based actions, Mixpanel analytics, Sentry crash reporting, and webhook-driven user lifecycle emails.",
+    ],
+    images: [
+      {
+        src: "/projectsScreenshots/simplerecurringtasks/srr1.png",
+        aspectRatio: "2560/1358",
+      },
+      {
+        src: "/projectsScreenshots/simplerecurringtasks/srr2.png",
+        aspectRatio: "2560/1358",
+      },
+      {
+        src: "/projectsScreenshots/simplerecurringtasks/srr3.png",
+        aspectRatio: "2560/1358",
+      },
     ],
   },
   {
@@ -329,21 +417,21 @@ function HeroSection({
           <a
             href="https://www.linkedin.com/in/lucas-pennice/"
             target="_blank"
-            className="hover:bg-white hover:shadow-[0_0_24px_2px_rgba(0,0,0,0.25)] px-1 rounded-md"
+            className="hover:bg-white  px-3 -translate-x-3 rounded-md"
           >
             LinkedIn
           </a>
           <a
             href="mailto:lucaspennice@gmail.com"
             target="_blank"
-            className="hover:bg-white hover:shadow-[0_0_24px_2px_rgba(0,0,0,0.25)] px-1 rounded-md"
+            className="hover:bg-white  px-3 -translate-x-3 rounded-md"
           >
             Email
           </a>
           <a
             href="https://github.com/LucasPennice"
             target="_blank"
-            className="hover:bg-white hover:shadow-[0_0_24px_2px_rgba(0,0,0,0.25)] px-1 rounded-md"
+            className="hover:bg-white  px-3 -translate-x-3 rounded-md"
           >
             GitHub
           </a>
@@ -389,30 +477,18 @@ function HeroSection({
               className="col-span-full font-medium text-[16px] xl:text-[18px] my-auto flex items-center gap-4"
             >
               <p>{projectOpened.role}</p>
-
-              {/* {projectOpened.url && (
-                <a
-                  href={projectOpened.url}
-                  target="_blank"
-                  className="hidden xl:flex items-center gap-1 hover:shadow-[0_0_24px_2px_rgba(0,0,0,0.25)] p-1 rounded-md"
-                >
-                  {projectOpened.url
-                    .replace("https://", "")
-                    .replace("http://", "")
-                    .replace("www.", "")}
-                  <FaLocationArrow />
-                </a>
-              )} */}
-              {projectOpened.url && (
-                <a
-                  href={projectOpened.url}
-                  target="_blank"
-                  className="hidden xl:flex items-center px-4 gap-1 hover:shadow-[0_0_24px_2px_rgba(0,0,0,0.1)] p-1 rounded-md"
-                >
-                  GitHub
-                  <FaLocationArrow />
-                </a>
-              )}
+              {projectOpened.links?.map((item) => {
+                return (
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    className="hidden xl:flex items-center px-4 gap-1  p-1 rounded-md"
+                  >
+                    {item.label}
+                    <FaLocationArrow />
+                  </a>
+                );
+              })}
             </motion.div>
 
             <motion.p
@@ -475,7 +551,7 @@ function HeroSection({
               onClick={openProject(item.name)}
               data-selected={item.name === projectIdOpened}
               key={idx}
-              className="flex justify-between items-center rounded-[30px] hover:bg-white data-[selected=true]:bg-white px-6 h-[52px] data-[selected=true]:shadow-[0_0_24px_2px_rgba(0,0,0,0.25)] hover:shadow-[0_0_24px_2px_rgba(0,0,0,0.25)] cursor-pointer transition-all"
+              className="flex justify-between items-center rounded-[30px] hover:bg-white data-[selected=true]:bg-white px-6 h-[52px] data-[selected=true]:shadow-[0_0_24px_2px_rgba(0,0,0,0.12)] cursor-pointer transition-all"
             >
               <p className="text-[18px] text-[#141416]">{item.name}</p>
               <p className="text-[18px] text-[#94949E]">
